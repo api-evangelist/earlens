@@ -1,8 +1,18 @@
 aid: earlens
 name: EarLens
-description: 'EarLens is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Earlens Corporation is a privately held medical technology company in
+  Menlo Park, California that makes the Earlens Contact Hearing Solution, a non-surgical,
+  custom-fit direct-drive hearing device. Instead of amplifying sound through a speaker,
+  a custom lens rests on the eardrum and is driven by light from an ear-tip, vibrating
+  the eardrum directly to reproduce a broader frequency range than conventional hearing
+  aids. Founded by Dr. Rodney Perkins, the company holds more than 180 patents, received
+  FDA clearance for its second-generation system in 2019, and was named to TIME''s
+  Best Inventions of 2020. Earlens is sold through audiology and ENT providers and
+  publishes a consumer and provider marketing site, patient support documents, and
+  a news section. As of this profiling pass it publishes no public developer portal,
+  API documentation, SDK, or machine-readable API contract.'
 url: https://raw.githubusercontent.com/api-evangelist/earlens/refs/heads/main/apis.yml
+image: https://www.earlens.com/images/Logo-Earlens-r-Mar19_cmyk_cmyk.jpg
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,12 +22,46 @@ created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Hearing
+- Hearing Aids
+- Audiology
+- Medical Devices
+- Medical Technology
+- Health
+- Consumer Health
 apis: []
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/earlens-domain-security.yml
+- type: LLMsTxt
+  url: llms/earlens-llms.txt
 - type: Website
+  url: https://www.earlens.com/
+- type: About
+  url: https://www.earlens.com/about
+- type: Support
+  url: https://www.earlens.com/support
+- type: Blog
+  url: https://www.earlens.com/news
+- type: GitHubOrganization
+  url: https://github.com/earlens
+- type: TermsOfService
+  url: https://www.earlens.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.earlens.com/privacy-policy
+- type: FAQ
+  url: https://www.earlens.com/patient-faq
+- type: ContactUs
+  url: https://www.earlens.com/contact-us
+- type: SecondaryMarket
   url: https://forgeglobal.com/earlens_stock/
