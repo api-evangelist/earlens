@@ -2,33 +2,10 @@ generated: '2026-08-04'
 method: probed
 source: live HTTPS probes of the Earlens web host
 host: https://www.earlens.com
-note: >-
-  Every /.well-known/ discovery path returned 404 from the Earlens marketing site.
-  No api.earlens.com, developer.earlens.com, docs.earlens.com, portal.earlens.com,
-  app.earlens.com, status.earlens.com or trust.earlens.com host resolves, so there
-  is no second host to probe. Recorded as an honest negative result — no WellKnown
-  or SecurityTxt pointer is wired in apis.yml because no document was found.
-documents:
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
-- path: /.well-known/oauth-protected-resource
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
-- path: /.well-known/agent-card.json
-  status: 404
-- path: /.well-known/agent.json
-  status: 404
-- path: /.well-known/mcp.json
-  status: 404
-- path: /.well-known/apple-app-site-association
-  status: 404
+note: Every /.well-known/ discovery path returned 404 from the Earlens marketing site. No api.earlens.com,
+  developer.earlens.com, docs.earlens.com, portal.earlens.com, app.earlens.com, status.earlens.com or
+  trust.earlens.com host resolves, so there is no second host to probe. Recorded as an honest negative
+  result — no WellKnown or SecurityTxt pointer is wired in apis.yml because no document was found.
 x-evidence:
   fetched: '2026-08-04'
   hosts_probed:
@@ -42,3 +19,31 @@ x-evidence:
   - https://app.earlens.com
   - https://status.earlens.com
   - https://trust.earlens.com
+hosts:
+- host: https://www.earlens.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+  - path: /.well-known/apple-app-site-association
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
